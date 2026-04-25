@@ -39,15 +39,6 @@ const Register = () => {
                         <p className="text-green-50 text-lg leading-relaxed">
                             Create an account to start saving your favorite plants, setting reminders, and building the garden of your dreams.
                         </p>
-                        
-                        <div className="mt-8 flex items-center gap-3">
-                            <div className="flex -space-x-3">
-                                <div className="w-10 h-10 rounded-full bg-green-200 border-2 border-green-800"></div>
-                                <div className="w-10 h-10 rounded-full bg-emerald-300 border-2 border-green-800"></div>
-                                <div className="w-10 h-10 rounded-full bg-teal-200 border-2 border-green-800"></div>
-                            </div>
-                            <span className="text-sm font-medium text-green-100">Join 10,000+ plant lovers</span>
-                        </div>
                     </div>
                 </div>
             </div>
