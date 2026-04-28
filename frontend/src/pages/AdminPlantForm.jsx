@@ -65,7 +65,7 @@ const AdminPlantForm = () => {
             });
             
             if (plant.image) {
-                setImagePreview(plant.image.startsWith('http') ? plant.image : `http://localhost:5000${plant.image}`);
+                setImagePreview(plant.image.startsWith('/uploads') ? `http://localhost:5055${plant.image}` : plant.image);
             }
             
             setLoading(false);

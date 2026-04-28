@@ -88,7 +88,7 @@ const AdminDashboard = () => {
                                 <tr key={plant._id} className="border-b border-gray-50 hover:bg-green-50/50 transition">
                                     <td className="py-3 px-6">
                                         <img 
-                                            src={plant.image.startsWith('http') ? plant.image : `http://localhost:5000${plant.image}`} 
+                                            src={plant.image?.startsWith('/uploads') ? `http://localhost:5055${plant.image}` : plant.image} 
                                             alt={plant.name} 
                                             className="w-16 h-16 object-cover rounded-lg shadow-sm"
                                             onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1416879598555-21d1b95f26ea?w=150&q=80' }}
