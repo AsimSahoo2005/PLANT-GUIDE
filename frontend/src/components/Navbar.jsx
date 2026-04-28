@@ -45,6 +45,9 @@ const Navbar = () => {
                                     </span>
                                 )}
                             </Link>
+                            {user.role === 'admin' && (
+                                <Link to="/admin/dashboard" className="text-gray-700 hover:text-green-700 font-medium transition">Admin</Link>
+                            )}
                             <button 
                                 onClick={handleLogout}
                                 className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full font-medium transition shadow-md"

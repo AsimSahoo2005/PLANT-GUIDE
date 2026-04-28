@@ -9,6 +9,9 @@ import Reminders from './pages/Reminders';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ProtectedRoute from './components/ProtectedRoute';
+import AdminRoute from './components/AdminRoute';
+import AdminDashboard from './pages/AdminDashboard';
+import AdminPlantForm from './pages/AdminPlantForm';
 import { AuthContext } from './context/AuthContext';
 import { Toaster } from 'react-hot-toast';
 
@@ -34,6 +37,11 @@ const AppContent = () => {
                     {/* Auth Routes */}
                     <Route path="/login" element={!user ? <Login /> : <Navigate to="/plants" replace />} />
                     <Route path="/register" element={!user ? <Register /> : <Navigate to="/plants" replace />} />
+                    
+                    {/* Admin Routes */}
+                    <Route path="/admin/dashboard" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
+                    <Route path="/admin/plants/add" element={<AdminRoute><AdminPlantForm /></AdminRoute>} />
+                    <Route path="/admin/plants/edit/:id" element={<AdminRoute><AdminPlantForm /></AdminRoute>} />
                     
                     {/* Fallback */}
                     <Route path="*" element={<Navigate to="/" replace />} />

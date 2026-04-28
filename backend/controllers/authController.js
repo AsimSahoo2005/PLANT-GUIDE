@@ -31,12 +31,12 @@ exports.register = async (req, res) => {
 
         // Generate Token
         const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_key';
-        const token = jwt.sign({ id: newUser._id }, JWT_SECRET, { expiresIn: '7d' });
+        const token = jwt.sign({ id: newUser._id, role: newUser.role }, JWT_SECRET, { expiresIn: '7d' });
 
         res.status(201).json({
             message: 'User registered successfully',
             token,
-            user: { id: newUser._id, name: newUser.name, email: newUser.email }
+            user: { id: newUser._id, name: newUser.name, email: newUser.email, role: newUser.role }
         });
     } catch (error) {
         console.error('Registration Error:', error);
@@ -66,12 +66,12 @@ exports.login = async (req, res) => {
 
         // Generate Token
         const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_key';
-        const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '7d' });
+        const token = jwt.sign({ id: user._id, role: user.role }, JWT_SECRET, { expiresIn: '7d' });
 
         res.status(200).json({
             message: 'Login successful',
             token,
-            user: { id: user._id, name: user.name, email: user.email }
+            user: { id: user._id, name: user.name, email: user.email, role: user.role }
         });
     } catch (error) {
         console.error('Login Error:', error);
